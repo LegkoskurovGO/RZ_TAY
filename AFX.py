@@ -8,8 +8,8 @@ def plot_bode(user_input):
     numerator, denominator = sp.fraction(G)
     num_coeffs = np.array(sp.Poly(numerator, s).all_coeffs(), dtype=float)
     den_coeffs = np.array(sp.Poly(denominator, s).all_coeffs(), dtype=float)
-    w = np.logspace( -1.1, 4, 1000)
-    # w = np.logspace( -100, 4, 1000)
+    w = np.logspace( -1.05, 4, 1000)
+    # w = np.logspace( -2, 4, 1000)
     s = 1j * w
     G = np.polyval(num_coeffs, s) / np.polyval(den_coeffs, s)
     return G
